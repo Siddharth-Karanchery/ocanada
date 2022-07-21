@@ -11,7 +11,8 @@ function App() {
           }
           alt="logo"
         />
-        <p>Canada Draw Analysis</p>
+        <h1>Canada Draw Analysis</h1>
+        <p>Page under construction</p>
       </header>
     </div>
   );
