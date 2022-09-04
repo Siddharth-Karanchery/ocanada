@@ -1,0 +1,10 @@
+.Home {
+  min-width: 95vw;
+  min-height: 95vh;
+  background-color: #282c34;
+  color: white;
+}
+.Home__image {
+  width: 100%;
+  height: 90vh;
+}
