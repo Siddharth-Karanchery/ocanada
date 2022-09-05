@@ -4,22 +4,16 @@ import "./Home.css";
 
 import { HeroBanner } from "../HeroBanner/HeroBanner";
 import { SevenDayGraph } from "../SevenDayGraph/SevenDayGraph";
+import { Typography } from "@mui/material";
 
 export const Home = () => {
   return (
-    // <>
-    //   <Box className="Home" flexGrow={1}>
-    //     HomePage
-    //     <img
-    //       className="Home__image"
-    //       alt="BannerImage"
-    //       src="https://www.teahub.io/photos/full/129-1293145_cross-jesus-christ-wallpaper-high-resolution-33rd-sunday.jpg"
-    //     />
-    //   </Box>
-    // </>
     <div className="Home">
       <HeroBanner />
       <SevenDayGraph />
+      <Typography variant="caption">
+        Note: Data available from 06 July 2022
+      </Typography>
     </div>
   );
 };

@@ -3,6 +3,9 @@
   min-height: 95vh;
   background-color: #282c34;
   color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .Home__image {
   width: 100%;

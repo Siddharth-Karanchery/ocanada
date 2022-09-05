@@ -1,0 +1,30 @@
+.root {
+  border-radius: 5px;
+  border: 1px solid grey;
+  display: flex;
+  flex-direction: row;
+}
+.HeroBanner {
+  padding: 2rem 1rem;
+  width: 100%;
+}
+.HeroBanner__flag {
+  height: 300px;
+  border-radius: 3px;
+}
+.HeroBanner__Content {
+  height: 100%;
+}
+.HeroBanner__Content__data {
+  display: flex;
+  flex-direction: row;
+  height: 90%;
+  flex-grow: 1;
+
+  align-items: center;
+}
+.HeroBanner__Content__data__item {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}

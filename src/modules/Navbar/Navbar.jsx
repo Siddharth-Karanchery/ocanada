@@ -34,7 +34,7 @@ export const Navbar = () => {
           >
             <img
               src={
-                "https://media.giphy.com/media/MONvE9pT7jsEE/giphy-downsized-large.gif"
+                "https://seeklogo.com/images/F/flag-of-canada-logo-2AE5525B50-seeklogo.com.png"
               }
               alt="logo"
               className="Navbar__logo__flag"
@@ -42,7 +42,7 @@ export const Navbar = () => {
             <h1 className="Navbar__logo__text">Canada Draw Analysis</h1>
             <img
               src={
-                "https://media.giphy.com/media/MONvE9pT7jsEE/giphy-downsized-large.gif"
+                "https://seeklogo.com/images/F/flag-of-canada-logo-2AE5525B50-seeklogo.com.png"
               }
               alt="logo"
               className="Navbar__logo__flag"
