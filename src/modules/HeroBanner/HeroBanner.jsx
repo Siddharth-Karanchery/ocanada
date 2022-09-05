@@ -6,9 +6,13 @@ import { mockApiData } from "../../data/mockApi";
 import moment from "moment";
 
 export const HeroBanner = () => {
-  console.log("mockApiData: ", mockApiData[0]);
   return (
-    <Grid container justifyContent="center" direction="row">
+    <Grid
+      container
+      justifyContent="center"
+      direction="row"
+      sx={{ marginTop: "1rem" }}
+    >
       <Grid item className="root" lg={8}>
         <Grid item className="HeroBanner" lg={6}>
           <img
@@ -18,11 +22,6 @@ export const HeroBanner = () => {
             alt="logo"
             className="HeroBanner__flag"
           />
-          {/* <Box className="HeroBanner__Content">
-          <Typography>Draw No:-{mockApiData[0].drawNum}</Typography>
-          <Box className="HeroBanner__Content">{mockApiData[0].cutoff}</Box>
-          <Box className="HeroBanner__Content">{mockApiData[0].ITA}</Box>
-        </Box> */}
         </Grid>
         <Grid item className="HeroBanner" lg={6}>
           <Box className="HeroBanner__Content">
