@@ -1,21 +1,17 @@
-.Navbar {
+.Footer {
   width: 100%;
-  padding: 1rem 1.5rem;
-  margin-bottom: 0.5rem;
+  min-height: 20vh;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
-.Navbar__logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+.Footer__column {
+  /* background-color: green; */
+  box-shadow: 10px 10px 1 blue;
 }
-.Navbar__logo:hover {
+.Footer__copyright {
+  font-size: x-small;
+  color: #ddd;
+}
+.Footer__column__link:hover {
   cursor: pointer;
-}
-.Navbar__logo__text {
-  margin: 0 2rem;
-}
-.Navbar__logo__flag {
-  height: 50px;
-  border-radius: 3px;
 }
