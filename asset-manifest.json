@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ocanada/static/css/main.a383db07.css",
-    "main.js": "/ocanada/static/js/main.05d55010.js",
+    "main.js": "/ocanada/static/js/main.1f884334.js",
     "static/js/787.a7472feb.chunk.js": "/ocanada/static/js/787.a7472feb.chunk.js",
     "index.html": "/ocanada/index.html",
     "main.a383db07.css.map": "/ocanada/static/css/main.a383db07.css.map",
-    "main.05d55010.js.map": "/ocanada/static/js/main.05d55010.js.map",
+    "main.1f884334.js.map": "/ocanada/static/js/main.1f884334.js.map",
     "787.a7472feb.chunk.js.map": "/ocanada/static/js/787.a7472feb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a383db07.css",
-    "static/js/main.05d55010.js"
+    "static/js/main.1f884334.js"
   ]
 }
