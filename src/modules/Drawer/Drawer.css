@@ -1,6 +1,7 @@
 /* .Drawer {
   min-width: 10vw;
-  background-color: #282c34;
+  background-color: #282c34; 
+ 
 } */
 .Drawer__content__title {
   width: 100%;
@@ -12,7 +13,7 @@
   border-bottom: 1px solid #aaaa;
 }
 .Drawer__content {
-  min-width: 12vw;
+  min-width: 14vw;
   min-height: 100%;
   display: "flex";
   flex-direction: "column";

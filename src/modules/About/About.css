@@ -1,0 +1,66 @@
+.About {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  /* background-color: red; */
+}
+.PageTitle {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+.About__Banner {
+  width: 103%;
+  margin-left: -1.5rem;
+}
+.About__section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 2rem 0;
+}
+.About__section__image {
+  width: 300px;
+  height: 300px;
+}
+.About__section__text {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+.About__section__text__title {
+  align-self: flex-start;
+  margin: 1rem;
+}
+.About__section__text__body {
+  text-align: justify;
+}
+.flip {
+  flex-direction: row-reverse;
+}
+/* ----------------------------------- */
+.custom-shape-divider-bottom-1664370838 {
+  position: absolute;
+  top: 31rem;
+  /* bottom: 0; */
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1664370838 svg {
+  position: relative;
+  display: block;
+  width: calc(113% + 1.3px);
+  height: 169px;
+}
+
+.custom-shape-divider-bottom-1664370838 .shape-fill {
+  /* fill: #ffffff; */
+  fill: #282c34;
+}

@@ -1,0 +1,36 @@
+.NewsTile {
+  text-align: center;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.NewsTile__Title {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  /* text-align: start; */
+  text-align: justify;
+  margin: 1rem;
+}
+.NewsPage__Filter {
+  display: flex;
+  flex-direction: row;
+}
+.NewsTile__Date {
+  align-self: flex-start;
+  margin-left: 1rem;
+  color: #eb2d37;
+}
+.NewsTile__Desc {
+  margin: 1rem;
+  text-align: justify;
+}
+.NewsTile__Link {
+  font-weight: bold;
+  color: #eb2d37;
+  align-self: flex-start;
+  margin: 1rem;
+}
+.NewsTile__Link:hover {
+  cursor: pointer;
+}

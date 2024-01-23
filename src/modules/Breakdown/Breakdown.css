@@ -1,0 +1,39 @@
+.Breakdown {
+  min-width: 90%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+.Breakdown__Filter {
+  width: 97%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.Breakdown__Filter__Date {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Breakdown__Filter__Button:hover {
+  cursor: pointer;
+}
+.Breakdown__Filter__Date__Input {
+  padding: 0.2rem 0.5rem;
+}
+.Breakdown__Chart {
+  width: 97%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

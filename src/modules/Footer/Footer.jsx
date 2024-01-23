@@ -110,7 +110,7 @@ export const Footer = () => {
       </Grid>
       <Grid item sx={{ marginTop: "1rem" }}>
         <Typography variant="caption" className="Footer__copyright">
-          Canada Draw Analysis (c) 2022
+          Canada Draw Analysis (Version 1) (c) 2022
         </Typography>
       </Grid>
     </Grid>

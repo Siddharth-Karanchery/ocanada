@@ -1,7 +1,19 @@
 .SevenDayGraph {
+  margin-top: 0.5rem;
+  border: 1px solid grey;
+  padding: 0.2rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  max-width: 67%;
+  min-width: 67%;
+  align-items: center;
+  justify-content: center;
+}
+.SevenDayGraph__graphs {
   margin-top: 2rem;
   min-height: 40vh;
-  border: 1px solid grey;
   padding: 1rem;
   border-radius: 5px;
+  min-width: 100%;
 }

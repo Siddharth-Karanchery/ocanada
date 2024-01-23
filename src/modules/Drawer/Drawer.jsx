@@ -9,14 +9,14 @@ import {
   ListItemText,
   Typography,
 } from "@mui/material";
-import Divider from "@mui/material/Divider";
 import InfoIcon from "@mui/icons-material/Info";
 import SendIcon from "@mui/icons-material/Send";
 import CompareIcon from "@mui/icons-material/Compare";
 import SsidChartIcon from "@mui/icons-material/SsidChart";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
-
-import { updatedDate } from "../../data/constant";
+import LoginIcon from "@mui/icons-material/Login";
+import AddchartIcon from "@mui/icons-material/Addchart";
+import HomeIcon from "@mui/icons-material/Home";
 
 import { useNavigate } from "react-router-dom";
 
@@ -33,12 +33,28 @@ export const Drawer = ({ drawerStatus, setDrawerStatus }) => {
       open={drawerStatus}
       onClose={() => setDrawerStatus(false)}
       onOpen={() => setDrawerStatus(true)}
-      // sx={{ marginTop: "10rem", backgroundColor: "#282c34" }}
-      className="Drawer"
+      sx={{
+        marginTop: "10rem",
+        backgroundColor: "#282c34",
+      }}
+      ModalProps={{ onBackdropClick: () => setDrawerStatus(false) }}
+      class="Drawer"
     >
       <Box className="Drawer__content">
         <Typography className="Drawer__content__title">Menu</Typography>
         <List>
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => {
+                clickHandler("/");
+              }}
+            >
+              <ListItemIcon>
+                <HomeIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Home" />
+            </ListItemButton>
+          </ListItem>
           <ListItem disablePadding>
             <ListItemButton
               onClick={() => {
@@ -99,11 +115,31 @@ export const Drawer = ({ drawerStatus, setDrawerStatus }) => {
               <ListItemText primary="Contact" />
             </ListItemButton>
           </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => {
+                clickHandler("/adddata");
+              }}
+            >
+              <ListItemIcon>
+                <AddchartIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Add Data" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => {
+                clickHandler("/login");
+              }}
+            >
+              <ListItemIcon>
+                <LoginIcon sx={{ color: "white" }} />
+              </ListItemIcon>
+              <ListItemText primary="Login" />
+            </ListItemButton>
+          </ListItem>
         </List>
-
-        <Typography className="Drawer__content__update">
-          Last Updated: {updatedDate}
-        </Typography>
       </Box>
     </SwipeableDrawer>
   );

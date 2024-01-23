@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import * as React from "react";
 import "./SevenDayGraph.css";
 import {
@@ -7,108 +7,119 @@ import {
   XAxis,
   YAxis,
   CartesianGrid,
-  Tooltip,
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { Typography } from "@mui/material";
-
-import { mockApiData } from "../../data/mockApi";
+import axios from "axios";
+import moment from "moment";
 
 export const SevenDayGraph = () => {
-  const inputData =
-    mockApiData.length < 7
-      ? mockApiData.reverse()
-      : mockApiData.slice(0, 7).reverse();
+  const [inputData, setInputData] = React.useState([]);
+
+  React.useEffect(() => {
+    axios
+      .get(
+        `https://ocanada-4d695-default-rtdb.asia-southeast1.firebasedatabase.app/.json?auth=${process.env.REACT_APP_DBSECRET}`
+      )
+      .then((response) => {
+        const tempInputData = Object.values(response.data.data);
+        setInputData(tempInputData.slice(-7));
+      });
+  }, []);
 
   const cutoffData = inputData.map((item) => {
     return {
-      date: item.date,
+      date: moment(item.date, "YYYY-MM-DD").format("DD MMM YYYY"),
       Cutoff: item.cutoff,
     };
   });
 
   const itaData = inputData.map((item) => {
-    return { date: item.date, ITA: item.ITA };
+    return {
+      date: moment(item.date, "YYYY-MM-DD").format("DD MMM YYYY"),
+      ITA: item.ITA,
+    };
   });
 
   return (
-    <Grid container className="SevenDayGraph" lg={8}>
-      <Grid item lg={6}>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart
-            width={500}
-            height={300}
-            data={cutoffData}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="date"
-              padding={{
-                right: 20,
+    <Grid className="SevenDayGraph">
+      <Grid container className="SevenDayGraph__graphs">
+        <Grid item lg={6}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={500}
+              height={300}
+              data={cutoffData}
+              margin={{
+                top: 5,
+                right: 30,
                 left: 20,
+                bottom: 5,
               }}
-            />
-            <YAxis
-              padding={{
-                top: 20,
-                bottom: 20,
-              }}
-            />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="Cutoff"
-              stroke="#8884d8"
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      </Grid>
-      <Grid item lg={6}>
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart
-            width={500}
-            height={300}
-            data={itaData}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis
-              dataKey="date"
-              padding={{
-                right: 20,
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="date"
+                padding={{
+                  right: 20,
+                  left: 20,
+                }}
+              />
+              <YAxis
+                padding={{
+                  top: 20,
+                  bottom: 20,
+                }}
+              />
+
+              <Legend />
+              <Line
+                type="linear"
+                dataKey="Cutoff"
+                stroke="#8884d8"
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </Grid>
+        <Grid item lg={6}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={500}
+              height={300}
+              data={itaData}
+              margin={{
+                top: 5,
+                right: 30,
                 left: 20,
+                bottom: 5,
               }}
-            />
-            <YAxis
-              padding={{
-                top: 20,
-                bottom: 20,
-              }}
-            />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="ITA"
-              stroke="#82ca9d"
-              activeDot={{ r: 8 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="date"
+                padding={{
+                  right: 20,
+                  left: 20,
+                }}
+              />
+              <YAxis
+                padding={{
+                  top: 20,
+                  bottom: 20,
+                }}
+              />
+
+              <Legend />
+              <Line
+                type="linear"
+                dataKey="ITA"
+                stroke="#82ca9d"
+                activeDot={{ r: 8 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </Grid>
       </Grid>
     </Grid>
   );
