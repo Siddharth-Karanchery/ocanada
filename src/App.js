@@ -32,6 +32,7 @@ function App() {
       <ThemeProvider theme={THEME}>
         <Navbar />
         <Routes>
+          <Route path="/ocanada" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/breakdown" element={<Breakdown />} />
           <Route path="/compare" element={<Compare />} />
