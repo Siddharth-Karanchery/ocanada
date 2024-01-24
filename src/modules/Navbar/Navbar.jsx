@@ -5,10 +5,12 @@ import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Navbar.css";
 import { Drawer } from "../Drawer/Drawer";
-// import { Drawer } from "../Drawer/Drawer.jsx";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { mobileBreakpoint } from "../../data/constant";
 
 export const Navbar = () => {
   const [drawerStatus, setDrawerStatus] = React.useState(false);
+  const isMobile = useMediaQuery(`(max-width:${mobileBreakpoint}px)`);
 
   let navigate = useNavigate();
 
@@ -27,6 +29,7 @@ export const Navbar = () => {
           <Grid
             className="Navbar__logo"
             item
+            xs={11}
             md={11}
             onClick={() => {
               navigate("/");
@@ -37,6 +40,7 @@ export const Navbar = () => {
                 "https://seeklogo.com/images/F/flag-of-canada-logo-2AE5525B50-seeklogo.com.png"
               }
               alt="logo"
+              // hidden={isMobile}
               className="Navbar__logo__flag"
             />
             <h1 className="Navbar__logo__text">Canada Draw Analysis</h1>
@@ -45,10 +49,11 @@ export const Navbar = () => {
                 "https://seeklogo.com/images/F/flag-of-canada-logo-2AE5525B50-seeklogo.com.png"
               }
               alt="logo"
+              hidden={isMobile}
               className="Navbar__logo__flag"
             />
           </Grid>
-          <Grid item md={1}>
+          <Grid item xs={1} md={1}>
             <IconButton
               size="large"
               edge="start"

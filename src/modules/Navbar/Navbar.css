@@ -19,3 +19,21 @@
   height: 50px;
   border-radius: 3px;
 }
+
+/* -------------------------- RESPONSIVE ------------------------- */
+/* -------------------------- MOBILE ------------------------- */
+@media screen and (max-width: 450px) {
+  .Navbar__logo {
+    flex-direction: column;
+  }
+  .Navbar__logo:hover {
+    cursor: pointer;
+  }
+  .Navbar__logo__text {
+    margin: 0 1rem 0 2rem;
+    font-size: medium;
+  }
+  .Navbar__logo__flag {
+    height: 20px;
+  }
+}
