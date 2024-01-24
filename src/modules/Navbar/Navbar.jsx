@@ -40,7 +40,6 @@ export const Navbar = () => {
                 "https://seeklogo.com/images/F/flag-of-canada-logo-2AE5525B50-seeklogo.com.png"
               }
               alt="logo"
-              // hidden={isMobile}
               className="Navbar__logo__flag"
             />
             <h1 className="Navbar__logo__text">Canada Draw Analysis</h1>

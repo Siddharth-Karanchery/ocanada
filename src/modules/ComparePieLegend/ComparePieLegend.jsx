@@ -23,15 +23,7 @@ export const ComparePieLegend = (props) => {
     "0-300",
   ];
 
-  const segmentColors = [
-    "#F72585",
-    "#b5179e",
-    "#8127b6",
-    "#4d36ce",
-    "#4361ee",
-    // "#4895ef",
-    // "#4cc9f0",
-  ];
+  const segmentColors = ["#F72585", "#b5179e", "#8127b6", "#4d36ce", "#4361ee"];
   const Text_451_500 = ["491-500", "481-490", "471-480", "461-470", "451-460"];
   const Text_401_450 = ["441-450", "431-440", "421-430", "411-420", "401-410"];
   let legendEle = null;
