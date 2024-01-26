@@ -1,12 +1,15 @@
-.root {
+.HeroBanner {
+  width: 67%;
+  height: auto;
   border-radius: 5px;
-  border: 1px solid grey;
+  border: 1px solid #808080;
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
-.HeroBanner {
+.HeroBanner__ele {
   padding: 2rem 1rem;
-  width: 100%;
+  width: 49%;
 }
 .HeroBanner__flag {
   height: 280px;
@@ -31,4 +34,37 @@
 .HeroBanner__next {
   margin-top: -2rem;
   font-size: smaller;
+}
+
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .HeroBanner {
+    width: 95%;
+    flex-direction: column;
+    margin: 10px 0;
+  }
+  .HeroBanner__ele {
+    padding: 2rem 1rem;
+    width: 90%;
+    align-items: center;
+  }
+  .HeroBanner__flag {
+    height: 170px;
+  }
+  .HeroBanner__Content__data__item {
+    margin: 15px 0;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .HeroBanner {
+    width: 95%;
+    flex-direction: row;
+    margin: 10px 0;
+  }
+  .HeroBanner__flag {
+    height: 170px;
+  }
 }
