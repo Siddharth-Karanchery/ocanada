@@ -17,3 +17,22 @@
   border-radius: 5px;
   min-width: 100%;
 }
+
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .SevenDayGraph {
+    margin: 10px 0 20px 0;
+    max-width: 95%;
+    min-width: 95%;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .SevenDayGraph {
+    margin: 10px 0 0px 0;
+    max-width: 95%;
+    min-width: 95%;
+  }
+}

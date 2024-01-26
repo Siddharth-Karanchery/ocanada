@@ -1,4 +1,5 @@
 import { Grid, Typography } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import * as React from "react";
 import "./SevenDayGraph.css";
 import {
@@ -27,6 +28,8 @@ export const SevenDayGraph = () => {
       });
   }, []);
 
+  const isMobile = useMediaQuery("(max-width:450px)");
+
   const cutoffData = inputData.map((item) => {
     return {
       date: moment(item.date, "YYYY-MM-DD").format("DD MMM YYYY"),
@@ -40,22 +43,30 @@ export const SevenDayGraph = () => {
       ITA: item.ITA,
     };
   });
+  const chartMargins = isMobile
+    ? {
+        top: 0,
+        right: -10,
+        left: -20,
+        bottom: 0,
+      }
+    : {
+        top: 5,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      };
 
   return (
     <Grid className="SevenDayGraph">
       <Grid container className="SevenDayGraph__graphs">
-        <Grid item lg={6}>
+        <Grid item xs={12} lg={6}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               width={500}
               height={300}
               data={cutoffData}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
+              margin={chartMargins}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
