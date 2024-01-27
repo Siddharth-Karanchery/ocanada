@@ -64,3 +64,26 @@
   /* fill: #ffffff; */
   fill: #282c34;
 }
+
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .custom-shape-divider-bottom-1664370838 {
+    top: 6rem;
+  }
+  .About__section {
+    flex-direction: column;
+    margin: 5rem 0;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .custom-shape-divider-bottom-1664370838 {
+    top: 15rem;
+  }
+  .About__section {
+    width: 95%;
+    margin: 5rem auto;
+  }
+}

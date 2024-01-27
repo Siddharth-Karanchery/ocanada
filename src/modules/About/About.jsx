@@ -1,14 +1,11 @@
 import * as React from "react";
-import { Container, Typography, Box, Button } from "@mui/material";
+import { Typography, Box } from "@mui/material";
 
 import "./About.css";
 
 export const About = () => {
   return (
-    <Container className="About">
-      {/* <Typography variant="h4" className="PageTitle">
-        About
-      </Typography> */}
+    <Box className="About">
       <img
         className="About__Banner"
         alt="banner"
@@ -27,7 +24,7 @@ export const About = () => {
           ></path>
         </svg>
       </div>
-      <Container>
+      <Box>
         <Typography variant="h4" className="PageTitle">
           About
         </Typography>
@@ -102,7 +99,7 @@ export const About = () => {
             </Typography>
           </Box>
         </Box>
-      </Container>
-    </Container>
+      </Box>
+    </Box>
   );
 };
