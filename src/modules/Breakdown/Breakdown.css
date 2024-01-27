@@ -37,3 +37,41 @@
   padding: 1rem;
   margin-bottom: 1rem;
 }
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Breakdown {
+    width: 95%;
+    align-items: center;
+  }
+  .Breakdown__Filter {
+    width: 90%;
+    flex-direction: column;
+  }
+  .Breakdown__Filter__Date {
+    width: 95%;
+    justify-content: space-evenly;
+    margin: 15px 0;
+  }
+  .Breakdown__Chart {
+    width: 90%;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Breakdown {
+    width: 95%;
+    align-items: center;
+  }
+  .Breakdown__Filter {
+    width: 95%;
+    flex-direction: column;
+  }
+  .Breakdown__Filter__Date {
+    margin: 15px 0;
+  }
+  .Breakdown__Chart {
+    width: 95%;
+  }
+}

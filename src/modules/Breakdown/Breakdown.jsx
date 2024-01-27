@@ -1,7 +1,7 @@
-import { Container, Typography, Box, Button, TextField } from "@mui/material";
+import { Typography, Box, Button, TextField } from "@mui/material";
 import * as React from "react";
 import "./Breakdown.css";
-import { ThemeProvider, styled } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { BreakdownOverall } from "../Breakdown_overall/BreakdownOverall";
 import { Breakdown451 } from "../Breakdown_451_500/Breakdown451.jsx";
 import { Breakdown401 } from "../Breakdown_401_450/Breakdown401";
@@ -97,7 +97,7 @@ export const Breakdown = () => {
 
   return (
     <ThemeProvider theme={appTheme}>
-      <Container class="Breakdown">
+      <Box className="Breakdown">
         <Typography
           variant="h4"
           sx={{
@@ -107,7 +107,7 @@ export const Breakdown = () => {
         >
           Breakdown
         </Typography>
-        <Container class="Breakdown__Filter">
+        <Box class="Breakdown__Filter">
           <Box class="Breakdown__Filter__Date">
             <Typography sx={{ marginRight: "0.5rem" }}>From:</Typography>
             <TextField
@@ -145,8 +145,8 @@ export const Breakdown = () => {
           >
             Filter
           </Button>
-        </Container>
-        <Container class="Breakdown__Chart">
+        </Box>
+        <Box class="Breakdown__Chart">
           <Typography
             variant="h5"
             sx={{
@@ -157,8 +157,8 @@ export const Breakdown = () => {
             Overall
           </Typography>
           <BreakdownOverall overAllData={overAllData} />
-        </Container>
-        <Container class="Breakdown__Chart">
+        </Box>
+        <Box class="Breakdown__Chart">
           <Typography
             variant="h5"
             sx={{
@@ -169,8 +169,8 @@ export const Breakdown = () => {
             451 - 500
           </Typography>
           <Breakdown451 data451={data451} />
-        </Container>
-        <Container class="Breakdown__Chart">
+        </Box>
+        <Box class="Breakdown__Chart">
           <Typography
             variant="h5"
             sx={{
@@ -181,8 +181,8 @@ export const Breakdown = () => {
             401 - 450
           </Typography>
           <Breakdown401 data401={data401} />
-        </Container>
-        <Container class="Breakdown__Chart">
+        </Box>
+        <Box class="Breakdown__Chart">
           <Typography
             variant="h5"
             sx={{
@@ -193,8 +193,8 @@ export const Breakdown = () => {
             Cutoff
           </Typography>
           <BreakdownCutoff cutoffData={cutoffData} />
-        </Container>
-        <Container class="Breakdown__Chart">
+        </Box>
+        <Box class="Breakdown__Chart">
           <Typography
             variant="h5"
             sx={{
@@ -205,8 +205,8 @@ export const Breakdown = () => {
             ITA
           </Typography>
           <BreakdownITA itaData={itaData} />
-        </Container>
-      </Container>
+        </Box>
+      </Box>
     </ThemeProvider>
   );
 };
