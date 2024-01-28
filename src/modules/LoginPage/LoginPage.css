@@ -1,7 +1,6 @@
 .Login {
   display: flex;
   flex-direction: column;
-  /* background-color: green; */
   width: 90%;
 }
 .Login__content {
@@ -18,7 +17,6 @@
   align-items: center;
 }
 .Login__content__right {
-  /* background-color: blue; */
   width: 40%;
   margin: 0 0.5rem;
   display: flex;
@@ -31,7 +29,7 @@
   margin: 1rem;
 }
 .Login__content__left__image {
-  height: 500px;
+  height: 70%;
   border-radius: 10px;
 }
 .Login__content__right__ele__input {
@@ -46,4 +44,73 @@
 }
 .CssTextField {
   width: 100%;
+}
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+  }
+  .Login__content {
+    width: 95%;
+    flex-direction: column;
+    align-items: center;
+    margin: -0.5rem 0 1rem 0;
+  }
+  .Login__content__left {
+    width: 95%;
+    height: 20rem;
+    margin-top: 1rem;
+  }
+  .Login__content__left__image {
+    height: 100%;
+    border-radius: 10px;
+  }
+  .Login__content__right {
+    width: 95%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Login__content__right__ele {
+    width: 80%;
+    margin: 1rem;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Login__content {
+    width: 95%;
+    height: 60vh;
+    align-items: center;
+    margin: -0.5rem 0 1rem 0;
+  }
+  .Login__content__left {
+    width: 50%;
+    height: 20rem;
+    margin-top: 1rem;
+    background-color: red;
+  }
+  .Login__content__left__image {
+    height: 100%;
+    border-radius: 10px;
+  }
+  .Login__content__right {
+    width: 95%;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Login__content__right__ele {
+    width: 90%;
+    margin: 1rem;
+  }
 }
