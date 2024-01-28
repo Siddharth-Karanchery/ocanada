@@ -13,8 +13,8 @@ export const NewsTile = (props) => {
       <Box
         component="img"
         sx={{
-          height: 233,
-          width: 350,
+          height: "40%",
+          width: "90%",
           maxHeight: { xs: 233, md: 167 },
           maxWidth: { xs: 350, md: 250 },
         }}

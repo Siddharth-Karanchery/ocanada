@@ -8,7 +8,6 @@
 .NewsTile__Title {
   font-weight: bold;
   margin-top: 0.5rem;
-  /* text-align: start; */
   text-align: justify;
   margin: 1rem;
 }

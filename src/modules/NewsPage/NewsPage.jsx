@@ -2,12 +2,13 @@ import * as React from "react";
 import "./NewsPage.css";
 // import { newsAPiKey } from "../../data/constant";
 import moment from "moment";
-import { Container, Typography, Box, Button, TextField } from "@mui/material";
+import { Typography, Box, Button, TextField } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 import Masonry from "@mui/lab/Masonry";
 
 import { NewsTile } from "../NewsTile/NewsTile";
-import { ThemeProvider, styled } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { appTheme } from "../../theme";
 
 const axios = require("axios");
@@ -24,6 +25,9 @@ export const NewsPage = () => {
   React.useEffect(() => {
     getData();
   });
+
+  const isMobile = useMediaQuery("(max-width:450px)");
+  const isTablet = useMediaQuery("(max-width:850px)");
 
   const getData = () => {
     if (toDate > fromDate) {
@@ -43,7 +47,7 @@ export const NewsPage = () => {
 
   return (
     <ThemeProvider theme={appTheme}>
-      <Container className="NewsPage">
+      <Box className="NewsPage">
         <Typography
           variant="h4"
           sx={{
@@ -53,10 +57,12 @@ export const NewsPage = () => {
         >
           News
         </Typography>
-        <Container class="NewsPage__Filter">
-          <Box class="NewsPage__Filter__Date">
+        <Box
+          className="NewsPage__Filter"
+          flexDirection={isMobile ? "column" : "row"}
+        >
+          <Box className="NewsPage__Filter__Date">
             <Typography sx={{ marginRight: "0.5rem" }}>From:</Typography>
-
             <TextField
               className="NewsPage__Filter__Date__Input"
               onChange={(e) => setToDate(e.target.value)}
@@ -67,7 +73,7 @@ export const NewsPage = () => {
               value={toDate}
             />
           </Box>
-          <Box class="NewsPage__Filter__Date">
+          <Box className="NewsPage__Filter__Date">
             <Typography sx={{ marginRight: "0.5rem" }}>To:</Typography>
 
             <TextField
@@ -92,14 +98,14 @@ export const NewsPage = () => {
           >
             Filter
           </Button>
-        </Container>
-        <Masonry columns={4} spacing={2}>
+        </Box>
+        <Masonry columns={isMobile ? 1 : isTablet ? 2 : 4} spacing={2}>
           {newsData &&
             newsData.map((article, index) => (
               <NewsTile key={index} article={article} />
             ))}
         </Masonry>
-      </Container>
+      </Box>
     </ThemeProvider>
   );
 };
