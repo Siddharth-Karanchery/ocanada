@@ -17,7 +17,7 @@ export const Footer = () => {
       sx={{ padding: "1rem" }}
     >
       <Grid container justifyContent="center" direction="row">
-        <Grid item className="Footer__column" lg={3}>
+        <Grid item className="Footer__column" xs={12} md={3} lg={3}>
           <Box
             onClick={() => {
               navigate("/");
@@ -29,7 +29,7 @@ export const Footer = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item className="Footer__column" lg={3}>
+        <Grid item className="Footer__column" xs={12} md={3} lg={3}>
           <Typography
             variant="h5"
             fontWeight="bold"
@@ -83,7 +83,7 @@ export const Footer = () => {
             Contact
           </Typography>
         </Grid>
-        <Grid item className="Footer__column" lg={3}>
+        <Grid item className="Footer__column" xs={12} md={3} lg={3}>
           <Box>
             <Typography
               variant="h5"
