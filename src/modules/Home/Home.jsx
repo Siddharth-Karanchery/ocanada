@@ -16,7 +16,7 @@ export const Home = () => {
       <Typography
         variant="h5"
         className="Home__7dayTitle"
-        marginTop={isMobile ? "5rem" : "10rem"}
+        marginTop={isMobile ? "5rem" : "5rem"}
       >
         Seven draw trends
       </Typography>

@@ -93,18 +93,13 @@ export const SevenDayGraph = () => {
             </LineChart>
           </ResponsiveContainer>
         </Grid>
-        <Grid item lg={6}>
+        <Grid item xs={12} lg={6}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               width={500}
               height={300}
               data={itaData}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 20,
-                bottom: 5,
-              }}
+              margin={chartMargins}
             >
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis
