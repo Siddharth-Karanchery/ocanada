@@ -33,12 +33,8 @@ export const Drawer = ({ drawerStatus, setDrawerStatus }) => {
       open={drawerStatus}
       onClose={() => setDrawerStatus(false)}
       onOpen={() => setDrawerStatus(true)}
-      sx={{
-        marginTop: "10rem",
-        backgroundColor: "#282c34",
-      }}
       ModalProps={{ onBackdropClick: () => setDrawerStatus(false) }}
-      class="Drawer"
+      className="Drawer"
     >
       <Box className="Drawer__content">
         <Typography className="Drawer__content__title">Menu</Typography>

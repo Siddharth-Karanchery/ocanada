@@ -1,5 +1,5 @@
 import * as React from "react";
-import { AppBar, Grid, Typography, IconButton } from "@mui/material";
+import { AppBar, Grid, Box, IconButton } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -18,13 +18,8 @@ export const Navbar = () => {
     setDrawerStatus((prevState) => !prevState);
   };
   return (
-    <>
-      <AppBar
-        position="relative"
-        color="transparent"
-        className="Navbar"
-        // sx={{ boxShadow: "none" }}
-      >
+    <Box style={{ width: "100vw" }}>
+      <AppBar position="relative" color="transparent" className="Navbar">
         <Grid container>
           <Grid
             className="Navbar__logo"
@@ -67,6 +62,6 @@ export const Navbar = () => {
         </Grid>
       </AppBar>
       <Drawer drawerStatus={drawerStatus} setDrawerStatus={setDrawerStatus} />
-    </>
+    </Box>
   );
 };
