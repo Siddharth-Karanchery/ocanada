@@ -1,12 +1,12 @@
 .Contact {
   display: flex;
   flex-direction: column;
-  /* background-color: green; */
   width: 90%;
 }
 .Contact__content {
   display: flex;
   flex-direction: row;
+  height: 90vh;
 }
 .Contact__content__left {
   width: 60%;
@@ -18,7 +18,6 @@
   align-items: center;
 }
 .Contact__content__right {
-  /* background-color: blue; */
   width: 40%;
   margin: 0 0.5rem;
   display: flex;
@@ -30,7 +29,7 @@
   width: 80%;
 }
 .Contact__content__left__image {
-  height: 500px;
+  width: 40rem;
   border-radius: 10px;
 }
 .Contact__content__right__ele__input {
@@ -50,4 +49,47 @@
 .Contact__Cancel {
   border: 1px solid red;
   color: red;
+}
+
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Contact__content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Contact__content__left,
+  .Contact__content__right {
+    width: 95%;
+    height: 40vh;
+  }
+  .Contact__content__right {
+    margin-bottom: 2rem;
+    height: 50vh;
+  }
+  .Contact__content__left__image {
+    width: 20rem;
+    border-radius: 10px;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .Contact__content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .Contact__content__left,
+  .Contact__content__right {
+    width: 95%;
+    height: 70vh;
+  }
+  .Contact__content__right {
+    margin: 2rem;
+    height: 70vh;
+  }
+  .Contact__content__left__image {
+    width: 30rem;
+    border-radius: 10px;
+  }
 }
