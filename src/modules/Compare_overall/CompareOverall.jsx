@@ -1,6 +1,14 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import * as React from "react";
-import { XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
+import {
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import { PieChart, Pie, Cell, BarChart, Bar } from "recharts";
 import { ComparePieLegend } from "../ComparePieLegend/ComparePieLegend";
 
@@ -117,9 +125,12 @@ export const CompareOverall = (props) => {
     );
   };
 
+  const isMobile = useMediaQuery("(max-width:450px)");
+  const isTablet = useMediaQuery("(max-width:850px)");
+
   return (
-    <Container class="CompareOverall">
-      <Container class="CompareOverall__Pie">
+    <Box class="CompareOverall">
+      <Box class="CompareOverall__Pie">
         <PieChart width={600} height={350}>
           <Pie
             data={dataPie1}
@@ -140,6 +151,7 @@ export const CompareOverall = (props) => {
           </Pie>
           <Tooltip />
         </PieChart>
+
         <PieChart width={600} height={350}>
           <Pie
             data={dataPie2}
@@ -160,12 +172,11 @@ export const CompareOverall = (props) => {
           </Pie>
           <Tooltip />
         </PieChart>
-      </Container>
+      </Box>
       <ComparePieLegend element={"overall"} />
-      <Container class="CompareOverall__Line">
+
+      <ResponsiveContainer width={isMobile ? "50%" : "100%"} height={300}>
         <BarChart
-          width={1200}
-          height={300}
           data={barchartData}
           margin={{
             top: 5,
@@ -182,7 +193,7 @@ export const CompareOverall = (props) => {
           <Bar dataKey={props.filteredData[0].date} fill="#F72585" />
           <Bar dataKey={props.filteredData[1].date} fill="#4d36ce" />
         </BarChart>
-      </Container>
-    </Container>
+      </ResponsiveContainer>
+    </Box>
   );
 };

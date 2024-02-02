@@ -1,9 +1,11 @@
-import { PropaneSharp } from "@mui/icons-material";
-import { Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import * as React from "react";
 
 import "./ComparePieLegend.css";
 export const ComparePieLegend = (props) => {
+  const isMobile = useMediaQuery("(max-width:450px)");
+
   const OverallColors = [
     "#F72585",
     "#b5179e",
@@ -30,58 +32,58 @@ export const ComparePieLegend = (props) => {
   if (props.element === "overall") {
     legendEle = OverallColors.map((item, index) => {
       return (
-        <Container class="ComparePieLegend__ele__panel" key={index + 30}>
-          <Container
-            class="ComparePieLegend__ele__panel__box"
+        <Box className="ComparePieLegend__ele__panel" key={index + 30}>
+          <Box
+            className="ComparePieLegend__ele__panel__box"
             style={{ backgroundColor: item }}
-          ></Container>
+          ></Box>
           <Typography
-            class="ComparePieLegend__ele__panel__text"
+            variant={isMobile ? "subtitle2" : "h6"}
             style={{ color: item }}
           >
             {OverallText[index]}
           </Typography>
-        </Container>
+        </Box>
       );
     });
   } else if (props.element === "451_500") {
     legendEle = segmentColors.map((item, index) => {
       return (
-        <Container class="ComparePieLegend__ele__panel" key={index + 20}>
-          <Container
-            class="ComparePieLegend__ele__panel__box"
+        <Box className="ComparePieLegend__ele__panel" key={index + 20}>
+          <Box
+            className="ComparePieLegend__ele__panel__box"
             style={{ backgroundColor: item }}
-          ></Container>
+          ></Box>
           <Typography
-            class="ComparePieLegend__ele__panel__text"
+            variant={isMobile ? "subtitle2" : "h6"}
             style={{ color: item }}
           >
             {Text_451_500[index]}
           </Typography>
-        </Container>
+        </Box>
       );
     });
   } else if (props.element === "401_450") {
     legendEle = segmentColors.map((item, index) => {
       return (
-        <Container class="ComparePieLegend__ele__panel" key={index + 10}>
-          <Container
-            class="ComparePieLegend__ele__panel__box"
+        <Box className="ComparePieLegend__ele__panel" key={index + 10}>
+          <Box
+            className="ComparePieLegend__ele__panel__box"
             style={{ backgroundColor: item }}
-          ></Container>
+          ></Box>
           <Typography
-            class="ComparePieLegend__ele__panel__text"
+            variant={isMobile ? "subtitle2" : "h6"}
             style={{ color: item }}
           >
             {Text_401_450[index]}
           </Typography>
-        </Container>
+        </Box>
       );
     });
   }
   return (
-    <Container class="ComparePieLegend">
-      <Container class="ComparePieLegend__ele">{legendEle}</Container>
-    </Container>
+    <Box className="ComparePieLegend">
+      <Box className="ComparePieLegend__ele">{legendEle}</Box>
+    </Box>
   );
 };

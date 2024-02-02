@@ -1,8 +1,8 @@
 .Compare {
-  min-width: 90%;
+  width: 90%;
   display: flex;
   flex-direction: column;
-  /* background-color: red; */
+  align-items: center;
 }
 .Compare__Filter {
   width: 97%;
@@ -45,4 +45,24 @@
 .CompareOverall__Pie {
   display: flex;
   flex-direction: row;
+}
+/*-------------- Responsive Design ------------------- */
+/*-------------- MOBILE ------------------- */
+@media screen and (max-width: 450px) {
+  .Compare__Filter {
+    width: 97%;
+    height: 20vh;
+    /* display: flex; */
+    flex-direction: column;
+  }
+  .CompareOverall__Pie {
+    flex-direction: column;
+  }
+}
+
+/*-------------- TABLET ------------------- */
+@media screen and (max-width: 850px) and (min-width: 450px) {
+  .CompareOverall__Pie {
+    flex-direction: column;
+  }
 }

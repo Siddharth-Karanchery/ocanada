@@ -1,11 +1,11 @@
-import { Container, Typography, Box, Button, TextField } from "@mui/material";
+import { Typography, Box, Button, TextField } from "@mui/material";
 import * as React from "react";
 import { Compare401 } from "../Compare_401_450/Compare401";
 import { Compare451 } from "../Compare_451_500/Compare451";
 import { CompareOverall } from "../Compare_overall/CompareOverall";
 import "./Compare.css";
 import axios from "axios";
-import { ThemeProvider, styled } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { appTheme } from "../../theme";
 
 export const Compare = () => {
@@ -48,7 +48,7 @@ export const Compare = () => {
   return (
     filteredData.length !== 0 && (
       <ThemeProvider theme={appTheme}>
-        <Container class="Compare">
+        <Box class="Compare">
           <Typography
             variant="h4"
             sx={{
@@ -58,7 +58,7 @@ export const Compare = () => {
           >
             Compare
           </Typography>
-          <Container class="Compare__Filter">
+          <Box class="Compare__Filter">
             <Box class="Compare__Filter__Date">
               <Typography sx={{ marginRight: "0.5rem" }}>Date 1:</Typography>
 
@@ -97,8 +97,8 @@ export const Compare = () => {
             >
               Filter
             </Button>
-          </Container>
-          <Container class="Compare__Chart">
+          </Box>
+          <Box class="Compare__Chart">
             <Typography
               variant="h5"
               sx={{
@@ -109,8 +109,8 @@ export const Compare = () => {
               Overall
             </Typography>
             <CompareOverall filteredData={filteredData} />
-          </Container>
-          <Container class="Compare__Chart">
+          </Box>
+          <Box class="Compare__Chart">
             <Typography
               variant="h5"
               sx={{
@@ -122,8 +122,8 @@ export const Compare = () => {
             </Typography>
             <Compare451 filteredData={filteredData} />
             {/* <Breakdown451 data451={data451} /> */}
-          </Container>
-          <Container class="Compare__Chart">
+          </Box>
+          <Box class="Compare__Chart">
             <Typography
               variant="h5"
               sx={{
@@ -135,8 +135,8 @@ export const Compare = () => {
             </Typography>
             <Compare401 filteredData={filteredData} />
             {/* <Breakdown401 data401={data401} /> */}
-          </Container>
-        </Container>
+          </Box>
+        </Box>
       </ThemeProvider>
     )
   );
